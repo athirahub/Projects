@@ -1,0 +1,3 @@
+browser=Chrome
+base_url=https://naveenautomationlabs.com/opencart/index.php?route=common/home
+wait=10
