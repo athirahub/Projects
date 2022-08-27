@@ -12,6 +12,11 @@ import com.NaveenAutomation.Page.MyAccountPage;
 import com.NaveenAutomation.Page.YourStorePage;
 import com.NaveenAutomations.BaseTests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+
 public class MonitorsPageTest extends BaseTests {
 	MonitorsPage monitor;
 	MyAccountPage acc;
@@ -22,16 +27,22 @@ public class MonitorsPageTest extends BaseTests {
 	public void openBrowser() {
 		initialise();
 		
+
+		
+	}
+	
+	@Test(priority=1)
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Test Case Description:To check whether item added to cart")
+	@Story("To check message in monitor page")
+	public void isAddedToCartTest() {
 		yp = new YourStorePage();
 		yp.clickMyAccountBtn();
 		login = yp.clickloginBtn();
-		acc=login.isLoginSuccessful("dfyu23@gmail.com", "Apple123@");
+		acc=login.isLoginSuccessful(email, password);
 		acc.clickComponents();
 		monitor=acc.clickMonitors();
 		
-	}
-	@Test
-	public void isAddedToCartTest() {
 		monitor.clickaddCartButton2();
 		
 //		monitor.addCartButton();

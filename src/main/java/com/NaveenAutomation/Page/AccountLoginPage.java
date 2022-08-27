@@ -6,36 +6,57 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.NaveenAutomations.BaseTests;
 
+import io.qameta.allure.Step;
 
-
-public class AccountLoginPage extends BaseTests{
+public class AccountLoginPage extends BaseTests {
 	public AccountLoginPage() {
-		PageFactory.initElements(driver,this);
+		PageFactory.initElements(driver, this);
 	}
-	@FindBy(css="#input-email")
-	private WebElement emailField;
-	@FindBy(css="#input-password")
-	private WebElement passwordField;
-	@FindBy(css="div.form-group:last-of-type input")
-	private WebElement loginButton;
-	
-	
 
+	@FindBy(css = "#input-email")
+	private WebElement emailField;
+	@FindBy(css = "#input-password")
+	private WebElement passwordField;
+	@FindBy(css = "div.form-group:last-of-type input")
+	private WebElement loginButton;
+	@FindBy(css = "div.form-group:last-of-type a")
+	private WebElement forgottenPassword;
+
+	@FindBy(css = "#account-login div.alert")
+	private WebElement passwordChangeMessage;
+
+	@Step("Filling login page email")
 	public void fillEmailField(String data) {
 		emailField.sendKeys(data);
 	}
+
+	@Step("Filling login page password")
 	public void fillPasswordField(String data) {
 		passwordField.sendKeys(data);
 	}
+
+	@Step("Submitting login")
 	public MyAccountPage submitLogin() {
 		loginButton.submit();
 		return new MyAccountPage();
-	} 
-	public MyAccountPage isLoginSuccessful(String email,String pass) {
+	}
+
+	@Step("Logging with username:{0} and password:{1} step..")
+	public MyAccountPage isLoginSuccessful(String email, String pass) {
 		fillEmailField(email);
 		fillPasswordField(pass);
 		return submitLogin();
-		
-		
+
+	}
+
+	@Step("Getting password reset")
+	public ForgotPassword clickforgotPassword() {
+		forgottenPassword.click();
+		return new ForgotPassword();
+	}
+
+	@Step("Getting login page header")
+	public String getMessage() {
+		return passwordChangeMessage.getText();
 	}
 }

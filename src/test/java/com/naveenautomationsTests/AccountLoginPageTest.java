@@ -10,6 +10,11 @@ import com.NaveenAutomation.Page.MyAccountPage;
 import com.NaveenAutomation.Page.YourStorePage;
 import com.NaveenAutomations.BaseTests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+
 
 
 
@@ -27,9 +32,12 @@ YourStorePage yp;
 	}
 		
 	
-	@Test()
+	@Test(priority=1)
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Test Case Description:To check whether login is successful")
+	@Story("To check header in login page")
 	public void isLoginSuccessful() {
-		MyAccountPage map= login.isLoginSuccessful("dfyu23@gmail.com", "Apple123@");
+		MyAccountPage map= login.isLoginSuccessful(email,password);
 		 Assert.assertEquals(map.getText(), "My Account");
 	}
 	@AfterMethod

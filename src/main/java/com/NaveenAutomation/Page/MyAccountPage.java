@@ -20,6 +20,8 @@ public class MyAccountPage extends BaseTests {
 	private WebElement desktop;
 	@FindBy(css="ul.nav li.dropdown:first-of-type li:last-of-type a ")
 	private WebElement mac;
+	@FindBy(css="#content ul:nth-of-type(2) li:first-of-type a")
+	private WebElement orderHistoryTab;
 	
 	@FindBy(css = "#content h2")
 	private WebElement Text;
@@ -30,6 +32,10 @@ public class MyAccountPage extends BaseTests {
 	public MonitorsPage clickMonitors() {
 		monitors.click();
 		return new MonitorsPage();
+	}
+	public OrderHistoryPage clickOrderTab() {
+		orderHistoryTab.click();
+		return new OrderHistoryPage();
 	}
 	public String getText() {
 		

@@ -19,6 +19,7 @@ public class OrderPlacedPage extends BaseTests {
 		return header.getText();
 		
 	}
+
 	public WebElement getContinue() {
 		return continueBtn;
 	}

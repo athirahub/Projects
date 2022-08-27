@@ -15,6 +15,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 
+import com.NaveenAutomation.Page.OrderHistoryPage.Table_name;
 import com.NaveenAutomation.Utils.WebEvents;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -23,6 +24,15 @@ public class BaseTests {
 	public static WebDriver driver;
 public static EventFiringWebDriver e_driver;
 	public static Logger log;
+	public static String email;
+	public static String password;
+	public static String emailChange;
+	
+	public static String columnData2;
+	
+
+
+
 
 	public Properties prop;
 	public static WebDriverEventListener web;
@@ -65,6 +75,12 @@ public static EventFiringWebDriver e_driver;
 			System.out.println("Have u entered the right browser");
 			break;
 		}
+		email=prop.getProperty("Email");
+		password=prop.getProperty("Password");
+		emailChange=prop.getProperty("EmailChange");
+		
+		columnData2=prop.getProperty("Order2");
+		
 		web=new WebEvents();
 		e_driver=new EventFiringWebDriver(driver);
 		

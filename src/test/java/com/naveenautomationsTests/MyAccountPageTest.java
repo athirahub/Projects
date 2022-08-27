@@ -11,29 +11,40 @@ import com.NaveenAutomation.Page.MyAccountPage;
 import com.NaveenAutomation.Page.YourStorePage;
 import com.NaveenAutomations.BaseTests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 
 public class MyAccountPageTest extends BaseTests {
 	MyAccountPage acc;
-	AccountLoginPage login=new AccountLoginPage();
-	YourStorePage yp ;
-	
+	AccountLoginPage login;
+	YourStorePage yp;
+
 	@BeforeMethod
 	public void openBrowser() {
 		initialise();
-		
+
+	
+	}
+
+	
+	@Test(priority=1)
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Test Case Description:To check whether selecting monitor is successful")
+	@Story("To check header in login page")
+	public void selectMonitors() {
 		yp = new YourStorePage();
 		yp.clickMyAccountBtn();
-		login = yp.clickloginBtn();
-		acc=login.isLoginSuccessful("dfyu23@gmail.com", "Apple123@");
-		
-	}
-	@Test
-	public void selectMonitors() {
+	login = yp.clickloginBtn();
+		acc = login.isLoginSuccessful(email, password);
+
 		acc.clickComponents();
-	MonitorsPage monitor=acc.clickMonitors();
-		Assert.assertEquals(monitor.getText(),"Monitors");
-		
+		MonitorsPage monitor = acc.clickMonitors();
+		Assert.assertEquals(monitor.getText(), "Monitors");
+
 	}
+
 	@AfterMethod
 	public void closeBrowser() {
 		tearDown();
