@@ -5,10 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.NaveenAutomation.Utils.Utils;
 import com.NaveenAutomations.BaseTests;
 
 public class OrderPlacedPage extends BaseTests {
 	public OrderPlacedPage() {
+		waitForDocumentCompleteState(10);
 		PageFactory.initElements(driver, this);
 	}
 	@FindBy(css="#content p:first-of-type")
@@ -16,6 +18,7 @@ public class OrderPlacedPage extends BaseTests {
 	@FindBy(css="div.buttons a")
 	private WebElement continueBtn;
 	public String getText() {
+		Utils.waitForElementToBeDisplayed(header);
 		return header.getText();
 		
 	}

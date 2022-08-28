@@ -6,10 +6,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import com.NaveenAutomation.Utils.Utils;
 import com.NaveenAutomations.BaseTests;
 
 public class CheckOutPage extends BaseTests {
+	
 	public CheckOutPage() {
+		waitForDocumentCompleteState(10);
 		PageFactory.initElements(driver, this);
 	}
 
@@ -59,62 +62,77 @@ public class CheckOutPage extends BaseTests {
 	}
 
 	public void fillFirstNameField(String data) {
-		firstNameField.sendKeys(data);
+		Utils.sendKeys(firstNameField, data);
+		
 	}
 
 	public void clickContinueButton() {
+		Utils.waitForElementToBeClickable(billingDetailsContinue);
 		billingDetailsContinue.click();
 	}
 
 	public void fillLastNameField(String data) {
-		lastNameField.sendKeys(data);
+		Utils.sendKeys(lastNameField, data);
+		
 	}
 
 	public void fillcompanyField(String data) {
-		companyField.sendKeys(data);
+		Utils.sendKeys(companyField, data);
+		
 	}
 
 	public void fillAddress1Field(String data) {
-		address1Field.sendKeys(data);
+		Utils.sendKeys(address1Field, data);
+		
 	}
 
 	public void fillAddress2Field(String data) {
-		address2Field.sendKeys(data);
+		Utils.sendKeys(address2Field, data);
+		
 	}
 
 	public void cityField(String data) {
-		cityField.sendKeys(data);
+		Utils.sendKeys(cityField, data);
+		
 	}
 
 	public void postalField(String data) {
-		postalField.sendKeys(data);
+		Utils.sendKeys(postalField, data);
+		
 	}
 
 	public void selectcountry(String data) {
-		selectButton(countryField).selectByVisibleText(data);
+		Utils.selectFromDropDown(countryField, data);
+		//selectButton(countryField).selectByVisibleText(data);
 	}
 
 	public void selectregion(String data) {
-		selectButton(regionField).selectByVisibleText(data);
+		Utils.selectFromDropDown(regionField, data);
+		//selectButton(regionField).selectByVisibleText(data);
 	}
 
 	public void clickContinueButtonDelivery() {
+		Utils.waitForElementToBeClickable(deliveryDetailsContinue);
 		deliveryDetailsContinue.click();
 	}
 
 	public void clickDeliveryMethodContinue() {
+		Utils.waitForElementToBeClickable(deliveryMethodContinue);
 		deliveryMethodContinue.click();
 	}
 
 	public void clickterms() {
+		Utils.waitForElementToBeClickable(terms);
 		terms.click();
 	}
 
 	public void clickPaymentMethodContinue() {
+		Utils.waitForElementToBeClickable(paymentMethodContinue);
 		paymentMethodContinue.click();
 	}
 
 	public OrderPlacedPage clickConfirm() {
+		Utils.waitForElementToBeClickable(confirm);
 		confirm.click();
 		return new OrderPlacedPage();
 	}
@@ -124,8 +142,8 @@ public class CheckOutPage extends BaseTests {
 	}
 
 	public String getText() {
-
-		return header.getText();
+		return Utils.getText(header);
+		
 	}
 
 }

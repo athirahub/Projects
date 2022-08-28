@@ -4,12 +4,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.NaveenAutomation.Utils.Utils;
 import com.NaveenAutomations.BaseTests;
 
 import io.qameta.allure.Step;
 
 public class AccountLoginPage extends BaseTests {
 	public AccountLoginPage() {
+		waitForDocumentCompleteState(10);
 		PageFactory.initElements(driver, this);
 	}
 
@@ -27,23 +29,28 @@ public class AccountLoginPage extends BaseTests {
 
 	@Step("Filling login page email")
 	public void fillEmailField(String data) {
-		emailField.sendKeys(data);
+		Utils.sendKeys(emailField, data);
+		
 	}
 
 	@Step("Filling login page password")
 	public void fillPasswordField(String data) {
-		passwordField.sendKeys(data);
+		Utils.sendKeys(passwordField, data);
+		
 	}
 
 	@Step("Submitting login")
 	public MyAccountPage submitLogin() {
+		Utils.waitForElementToBeClickable(loginButton);
 		loginButton.submit();
 		return new MyAccountPage();
 	}
 
 	@Step("Logging with username:{0} and password:{1} step..")
 	public MyAccountPage isLoginSuccessful(String email, String pass) {
+		
 		fillEmailField(email);
+		
 		fillPasswordField(pass);
 		return submitLogin();
 

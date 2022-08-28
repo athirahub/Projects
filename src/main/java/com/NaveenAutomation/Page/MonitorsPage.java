@@ -4,10 +4,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.NaveenAutomation.Utils.Utils;
 import com.NaveenAutomations.BaseTests;
 
 public class MonitorsPage extends BaseTests {
 	public MonitorsPage() {
+		waitForDocumentCompleteState(10);
 		PageFactory.initElements(driver, this);
 	}
 
@@ -27,22 +29,27 @@ public class MonitorsPage extends BaseTests {
 	private WebElement message;
 
 	public void clickaddCartButton2() {
+		Utils.waitForElementToBeClickable(addCart2Button);
 		addCart2Button.click();
 	}
 
 	public String getText() {
-		return header.getText();
+		return Utils.getText(header);
+		
 	}
 	public String getmessage() {
+		Utils.waitForElementToBeDisplayed(message);
 		return message.getText();
 	}
 	public String locatorCart() {
 		return "#cart-total";
 	}
 	public void addCartButton() {
+		Utils.waitForElementToBeDisplayed(cartButton);
 		cartButton.click();
 	}
 	public CheckOutPage clickCheckOut() {
+		Utils.waitForElementToBeClickable(checkOut);
 		checkOut.click();
 		return new CheckOutPage();
 	}

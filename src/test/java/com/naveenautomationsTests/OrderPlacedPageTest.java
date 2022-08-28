@@ -45,7 +45,7 @@ public class OrderPlacedPageTest extends BaseTests {
 		monitor = acc.clickMonitors();
 		monitor.clickaddCartButton2();
 		wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(monitor.locatorCart())));
+		//wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(monitor.locatorCart())));
 		monitor.addCartButton();
 		check = monitor.clickCheckOut();
 		
@@ -56,7 +56,7 @@ public class OrderPlacedPageTest extends BaseTests {
 		check.clickPaymentMethodContinue();
 		 order=check.clickConfirm();
 		
-		wait.until(ExpectedConditions.elementToBeClickable(order.getContinue()));
+		//wait.until(ExpectedConditions.elementToBeClickable(order.getContinue()));
 
 		Assert.assertEquals(order.getText(), "Your order has been successfully processed!");
 

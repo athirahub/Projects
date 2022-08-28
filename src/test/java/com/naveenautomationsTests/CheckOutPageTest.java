@@ -27,7 +27,7 @@ public class CheckOutPageTest extends BaseTests{
 	MonitorsPage monitor;
 	MonitorsPage monitors;
 	MyAccountPage acc;
-	AccountLoginPage login=new AccountLoginPage();
+	AccountLoginPage login;;
 	YourStorePage yp ;
 	CheckOutPage check;
 	
@@ -53,7 +53,6 @@ public class CheckOutPageTest extends BaseTests{
 		monitor=acc.clickMonitors();
 		monitor.clickaddCartButton2();
 		wait=new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(monitor.locatorCart())));
 		monitor.addCartButton();
 		check=monitor.clickCheckOut();
 		
@@ -65,7 +64,6 @@ public class CheckOutPageTest extends BaseTests{
 		check.clickterms();
 		check.clickPaymentMethodContinue();
 		OrderPlacedPage order=check.clickConfirm();
-		wait.until(ExpectedConditions.elementToBeClickable(order.getContinue()));
 		
 	Assert.assertEquals(order.getText(),"Your order has been successfully processed!");
 		

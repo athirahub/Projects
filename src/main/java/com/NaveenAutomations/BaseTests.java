@@ -11,9 +11,13 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.NaveenAutomation.Page.OrderHistoryPage.Table_name;
 import com.NaveenAutomation.Utils.WebEvents;
@@ -36,7 +40,7 @@ public static EventFiringWebDriver e_driver;
 
 	public Properties prop;
 	public static WebDriverEventListener web;
-	
+	public static JavascriptExecutor jse;
 
 	public BaseTests() {
 		prop = new Properties();
@@ -93,8 +97,8 @@ public static EventFiringWebDriver e_driver;
 
 		driver.get(prop.getProperty("base_url"));
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Long.valueOf(prop.getProperty("wait")), TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(Long.valueOf(prop.getProperty("wait")), TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(Long.valueOf(prop.getProperty("wait")), TimeUnit.SECONDS);
+		//driver.manage().timeouts().pageLoadTimeout(Long.valueOf(prop.getProperty("wait")), TimeUnit.SECONDS);
 	}
 	
 	public void logsetup() {
@@ -102,6 +106,21 @@ public static EventFiringWebDriver e_driver;
 		PropertyConfigurator.configure("log4j.properties");
 		BasicConfigurator.configure();
 		log.setLevel(Level.INFO);
+	}
+	public void waitForDocumentCompleteState(int timeOutInSeconds) {
+		new WebDriverWait(driver, timeOutInSeconds).until((ExpectedCondition<Boolean>)V-> {
+			log.info("Verifying page has loaded......");
+			jse = (JavascriptExecutor) driver;
+			String documentIsReady = jse.executeScript("return document.readyState").toString();
+			while (true) {
+				if (documentIsReady.equalsIgnoreCase("complete")) {
+					log.info("Page has loaded completely......");
+					return true;
+				} else {
+					return false;
+				}
+			}
+		});
 	}
 
 	public void tearDown() {

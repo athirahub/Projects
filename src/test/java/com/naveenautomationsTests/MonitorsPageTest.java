@@ -20,7 +20,7 @@ import io.qameta.allure.Story;
 public class MonitorsPageTest extends BaseTests {
 	MonitorsPage monitor;
 	MyAccountPage acc;
-	AccountLoginPage login=new AccountLoginPage();
+	AccountLoginPage login;
 	YourStorePage yp ;
 	CheckOutPage check;
 	@BeforeMethod

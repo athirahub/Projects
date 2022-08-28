@@ -8,8 +8,10 @@ import org.testng.annotations.Test;
 import com.NaveenAutomation.Page.AccountLoginPage;
 import com.NaveenAutomation.Page.MyAccountPage;
 import com.NaveenAutomation.Page.YourStorePage;
+import com.NaveenAutomation.Utils.Utils;
 import com.NaveenAutomations.BaseTests;
 
+import bsh.util.Util;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -27,6 +29,7 @@ YourStorePage yp;
 		initialise();
 		login=new AccountLoginPage();
 		yp = new YourStorePage();
+		
 		yp.clickMyAccountBtn();
 		login = yp.clickloginBtn();
 	}

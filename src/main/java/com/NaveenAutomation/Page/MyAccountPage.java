@@ -4,12 +4,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.NaveenAutomation.Utils.Utils;
 import com.NaveenAutomations.BaseTests;
 
 
 
 public class MyAccountPage extends BaseTests {
 	public MyAccountPage() {
+		waitForDocumentCompleteState(10);
 		PageFactory.initElements(driver, this);
 	}
 	@FindBy(css="div.collapse >ul:first-of-type >li:nth-of-type(3) >a")
@@ -27,18 +29,21 @@ public class MyAccountPage extends BaseTests {
 	private WebElement Text;
 	
 	public void clickComponents() {
+		Utils.waitForElementToBeClickable(components);
 		components.click();
 	}
 	public MonitorsPage clickMonitors() {
+		Utils.waitForElementToBeClickable(monitors);
 		monitors.click();
 		return new MonitorsPage();
 	}
 	public OrderHistoryPage clickOrderTab() {
+		Utils.waitForElementToBeClickable(orderHistoryTab);
 		orderHistoryTab.click();
 		return new OrderHistoryPage();
 	}
 	public String getText() {
-		
+		Utils.waitForElementToBeDisplayed(Text);
 		return Text.getText();
 	}
 }

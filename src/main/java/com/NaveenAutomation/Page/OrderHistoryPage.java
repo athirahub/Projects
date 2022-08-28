@@ -12,6 +12,8 @@ import com.NaveenAutomations.BaseTests;
 
 public class OrderHistoryPage extends BaseTests {
 	public OrderHistoryPage() {
+		
+		waitForDocumentCompleteState(10);
 		PageFactory.initElements(driver, this);
 		 headers = driver
 				.findElements(By.cssSelector("table[class='table table-bordered table-hover']  thead td"));
