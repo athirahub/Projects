@@ -1,10 +1,11 @@
 package com.NaveenAutomation.Utils;
 
-import com.NaveenAutomations.BaseTests;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
+import com.NaveenAutomation.Base.BaseTests;
 
 public class CustomListener extends BaseTests implements ITestListener{
 	@Override

@@ -1,11 +1,12 @@
 package com.NaveenAutomation.Page;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.NaveenAutomation.Base.BaseTests;
 import com.NaveenAutomation.Utils.Utils;
-import com.NaveenAutomations.BaseTests;
 
 public class RegisterAccountPage extends BaseTests {
 	public RegisterAccountPage() {

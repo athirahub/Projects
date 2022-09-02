@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import com.NaveenAutomation.Base.BaseTests;
 import com.NaveenAutomation.Utils.Utils;
-import com.NaveenAutomations.BaseTests;
 
 public class CheckOutPage extends BaseTests {
 	

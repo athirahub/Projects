@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.NaveenAutomations.BaseTests;
+import com.NaveenAutomation.Base.BaseTests;
 
 public class OrderHistoryPage extends BaseTests {
 	public OrderHistoryPage() {
