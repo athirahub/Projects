@@ -3,7 +3,7 @@ package com.Naveenautomatio.RetryLogic;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
-import com.NaveenAutomations.BaseTests;
+import com.NaveenAutomation.Base.BaseTests;
 
 public class RetryTest extends BaseTests implements IRetryAnalyzer {
 	int counter=0;

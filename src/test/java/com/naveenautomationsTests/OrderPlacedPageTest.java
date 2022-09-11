@@ -8,13 +8,13 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.NaveenAutomation.Base.BaseTests;
 import com.NaveenAutomation.Page.AccountLoginPage;
 import com.NaveenAutomation.Page.CheckOutPage;
 import com.NaveenAutomation.Page.MonitorsPage;
 import com.NaveenAutomation.Page.MyAccountPage;
 import com.NaveenAutomation.Page.OrderPlacedPage;
 import com.NaveenAutomation.Page.YourStorePage;
-import com.NaveenAutomations.BaseTests;
 
 public class OrderPlacedPageTest extends BaseTests {
 	MonitorsPage monitor;

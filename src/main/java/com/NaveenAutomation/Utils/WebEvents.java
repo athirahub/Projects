@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 
-import com.NaveenAutomations.BaseTests;
+import com.NaveenAutomation.Base.BaseTests;
 
 public class WebEvents extends BaseTests implements WebDriverEventListener {
 

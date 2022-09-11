@@ -3,6 +3,8 @@ package com.NaveenAutomation.Base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 
 import org.apache.log4j.BasicConfigurator;
@@ -10,7 +12,11 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -60,6 +66,28 @@ public static EventFiringWebDriver e_driver;
 	}
 
 	public void initialise() {
+		String value=prop.getProperty("isGridAdded");
+		if(value.equals("true")){
+			DesiredCapabilities cap = new DesiredCapabilities();
+			cap.setBrowserName("MicrosoftEdge");
+			cap.setPlatform(Platform.WINDOWS);
+
+			EdgeOptions options = new EdgeOptions();
+			// Do testing headless Mode
+			// options.setHeadless(false);
+			options.merge(cap);
+
+			String hubURL = "http://localhost:4444/";
+			try {
+				driver = new RemoteWebDriver(new URL(hubURL), options);
+
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else {
+			
+		
 		String browser = prop.getProperty("browser");
 		switch (browser) {
 		
@@ -77,6 +105,7 @@ public static EventFiringWebDriver e_driver;
 		default:
 			System.out.println(("Verify you have passed the correct browser name"));
 			break;
+		}
 		}
 		email=prop.getProperty("Email");
 		password=prop.getProperty("Password");

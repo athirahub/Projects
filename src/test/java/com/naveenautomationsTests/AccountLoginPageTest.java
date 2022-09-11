@@ -5,11 +5,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.NaveenAutomation.Base.BaseTests;
 import com.NaveenAutomation.Page.AccountLoginPage;
 import com.NaveenAutomation.Page.MyAccountPage;
 import com.NaveenAutomation.Page.YourStorePage;
 import com.NaveenAutomation.Utils.Utils;
-import com.NaveenAutomations.BaseTests;
 
 import bsh.util.Util;
 import io.qameta.allure.Description;
@@ -27,7 +27,7 @@ YourStorePage yp;
 	@BeforeMethod
 	public void openBrowser() {
 		initialise();
-		login=new AccountLoginPage();
+		
 		yp = new YourStorePage();
 		
 		yp.clickMyAccountBtn();

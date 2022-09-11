@@ -5,12 +5,12 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.NaveenAutomation.Base.BaseTests;
 import com.NaveenAutomation.Page.AccountLoginPage;
 import com.NaveenAutomation.Page.MyAccountPage;
 import com.NaveenAutomation.Page.OrderHistoryPage;
 import com.NaveenAutomation.Page.OrderHistoryPage.Table_name;
 import com.NaveenAutomation.Page.YourStorePage;
-import com.NaveenAutomations.BaseTests;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;

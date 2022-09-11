@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.NaveenAutomation.Base.BaseTests;
 import com.NaveenAutomation.Page.AccountLoginPage;
 import com.NaveenAutomation.Page.MyAccountPage;
 import com.NaveenAutomation.Page.RegisterAccountPage;
@@ -15,7 +16,6 @@ import com.NaveenAutomation.Page.YourAccountCreatedPage;
 import com.NaveenAutomation.Page.YourStorePage;
 import com.NaveenAutomation.Utils.ExcelUtil;
 import com.NaveenAutomation.Utils.Utils;
-import com.NaveenAutomations.BaseTests;
 
 public class RegisterAccountPageTest extends BaseTests {
 	YourStorePage yp;

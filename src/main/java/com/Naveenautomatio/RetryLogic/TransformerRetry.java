@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 import org.testng.IAnnotationTransformer;
 import org.testng.annotations.ITestAnnotation;
 
-import com.NaveenAutomations.BaseTests;
+import com.NaveenAutomation.Base.BaseTests;
 
 public class TransformerRetry extends BaseTests implements IAnnotationTransformer {
 	@Override
