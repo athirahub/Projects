@@ -15,6 +15,8 @@ public class RetryTest extends BaseTests implements IRetryAnalyzer {
 			return true;
 		}
 		return false;
+		
+		//added new logic
 	}
 
 }
