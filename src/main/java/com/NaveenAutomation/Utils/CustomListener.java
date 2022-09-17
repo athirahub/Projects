@@ -8,6 +8,7 @@ import org.testng.ITestResult;
 import com.NaveenAutomation.Base.BaseTests;
 
 public class CustomListener extends BaseTests implements ITestListener{
+	
 	@Override
 	public void onTestStart(ITestResult result) {
 		log.info("Test started:"+result.getMethod().getMethodName());	

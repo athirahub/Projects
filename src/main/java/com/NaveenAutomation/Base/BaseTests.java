@@ -66,26 +66,7 @@ public static EventFiringWebDriver e_driver;
 	}
 
 	public void initialise() {
-		String value=prop.getProperty("isGridAdded");
-		if(value.equals("true")){
-			DesiredCapabilities cap = new DesiredCapabilities();
-			cap.setBrowserName("MicrosoftEdge");
-			cap.setPlatform(Platform.WINDOWS);
-
-			EdgeOptions options = new EdgeOptions();
-			// Do testing headless Mode
-			// options.setHeadless(false);
-			options.merge(cap);
-
-			String hubURL = "http://localhost:4444/";
-			try {
-				driver = new RemoteWebDriver(new URL(hubURL), options);
-
-			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}else {
+		
 			
 		
 		String browser = prop.getProperty("browser");
@@ -93,6 +74,7 @@ public static EventFiringWebDriver e_driver;
 		
 		
 		case "Chrome":
+			System.out.println("chrome!!!");
 			driver = WebDriverManager.chromedriver().create();
 			break;
 		case "Firefox":
@@ -106,7 +88,7 @@ public static EventFiringWebDriver e_driver;
 			System.out.println(("Verify you have passed the correct browser name"));
 			break;
 		}
-		}
+		
 		email=prop.getProperty("Email");
 		password=prop.getProperty("Password");
 		emailChange=prop.getProperty("EmailChange");

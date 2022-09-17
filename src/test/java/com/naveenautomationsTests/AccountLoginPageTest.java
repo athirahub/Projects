@@ -42,6 +42,7 @@ YourStorePage yp;
 	public void isLoginSuccessful() {
 		MyAccountPage map= login.isLoginSuccessful(email,password);
 		 Assert.assertEquals(map.getText(), "My Account");
+		
 	}
 	@AfterMethod
 	public void closeBrowser() {
