@@ -19,7 +19,7 @@ public class YourStorePage extends BaseTests {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(css="#top-links ul:first-of-type li.dropdown span:first-of-type")
+	@FindBy(css="a[title='My Account']")
 	WebElement accountButton;
 	@FindBy(css="#top-links ul:last-of-type ul >li:last-of-type a")
 	WebElement login;
