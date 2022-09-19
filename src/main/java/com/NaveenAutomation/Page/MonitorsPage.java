@@ -15,7 +15,7 @@ public class MonitorsPage extends BaseTests {
 
 	@FindBy(css = "#content h2")
 	private WebElement header;
-	@FindBy(css ="div.row div.product-layout:last-of-type span.hidden-xs")
+	@FindBy(xpath  ="//*[@id=\"content\"]/div[3]/div[2]/div/div[2]/div[2]/button[1]")
 	private WebElement addCart2Button;
 	@FindBy(css = "div.row div.product-layout:last-of-type button:nth-of-type(2) i")
 	private WebElement wishList2Button;
@@ -30,7 +30,7 @@ public class MonitorsPage extends BaseTests {
 
 	public void clickaddCartButton2() {
 		
-		
+		//*[@id="content"]/div[3]/div[2]/div/div[2]/div[2]/button[1]
 		addCart2Button.click();
 	}
 
