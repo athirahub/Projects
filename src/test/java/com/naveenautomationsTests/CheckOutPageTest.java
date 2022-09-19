@@ -17,6 +17,7 @@ import com.NaveenAutomation.Page.MonitorsPage;
 import com.NaveenAutomation.Page.MyAccountPage;
 import com.NaveenAutomation.Page.OrderPlacedPage;
 import com.NaveenAutomation.Page.YourStorePage;
+import com.NaveenAutomation.Utils.Utils;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
@@ -54,6 +55,7 @@ public class CheckOutPageTest extends BaseTests{
 		monitor.clickaddCartButton2();
 		wait=new WebDriverWait(driver, 10);
 		monitor.addCartButton();
+		Utils.sleep(10);
 		check=monitor.clickCheckOut();
 		
 		
