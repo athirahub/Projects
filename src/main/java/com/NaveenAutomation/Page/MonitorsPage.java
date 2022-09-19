@@ -21,7 +21,7 @@ public class MonitorsPage extends BaseTests {
 	private WebElement wishList2Button;
 	@FindBy(css = "div.row div.product-layout:last-of-type button:nth-of-type(3) i")
 	private WebElement compare2;
-	@FindBy(css="#cart-total")
+	@FindBy(xpath ="// span[@id='cart-total']")
 	private WebElement cartButton;
 	@FindBy(xpath ="//strong[contains(text(),' Checkout')]")
 	private WebElement checkOut;

@@ -67,6 +67,7 @@ public class CheckOutPage extends BaseTests {
 	}
 
 	public void clickContinueButton() {
+		Utils.sleep(10);
 		Utils.waitForElementToBeClickable(billingDetailsContinue);
 		billingDetailsContinue.click();
 	}
