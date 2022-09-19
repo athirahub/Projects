@@ -58,7 +58,7 @@ public class OrderHistoryPageTest extends BaseTests {
 		account = login.isLoginSuccessful(email, password);
 		history = account.clickOrderTab();
 		String text = history.findText(columnData2, Table_name.TOTAL);
-		Assert.assertEquals(text, "$405.00", "The total match");
+		Assert.assertEquals(text, "$205.00", "The total match");
 	}
 
 	@AfterMethod
