@@ -95,6 +95,9 @@ public class Utils extends BaseTests {
 		}
 
 	}
+	public static void waitForAttribute(WebElement element,String attribute,String value) {
+		new WebDriverWait(driver, 15).until(ExpectedConditions.attributeToBe(element,attribute ,value ));
+	}
 
 	public static void sendKeys(WebElement element, String keysInput) {
 		new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOf(element)).sendKeys(keysInput);

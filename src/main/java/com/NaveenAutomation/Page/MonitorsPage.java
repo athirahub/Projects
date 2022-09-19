@@ -28,6 +28,8 @@ public class MonitorsPage extends BaseTests {
 	//ul.dropdown-menu li:last-of-type p a:last-of-type strong
 	@FindBy(css="#product-category div.alert")
 	private WebElement message;
+	@FindBy(css="#cart")
+	private WebElement cart;
 
 	public void clickaddCartButton2() {
 		Utils.sleep(15);
@@ -52,7 +54,8 @@ public class MonitorsPage extends BaseTests {
 	}
 	public CheckOutPage clickCheckOut() {
 		Utils.sleep(15);
-		Utils.waitForElementToBeClickable(checkOut);
+		Utils.waitForAttribute(cart,"class","btn-group btn-block open");
+		
 		checkOut.click();
 		return new CheckOutPage();
 	}
