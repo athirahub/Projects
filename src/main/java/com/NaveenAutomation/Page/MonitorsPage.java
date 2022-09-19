@@ -15,7 +15,7 @@ public class MonitorsPage extends BaseTests {
 
 	@FindBy(css = "#content h2")
 	private WebElement header;
-	@FindBy(css = "div.row div.product-layout:last-of-type span.hidden-xs")
+	@FindBy(css ="div.row div.product-layout:last-of-type span.hidden-xs")
 	private WebElement addCart2Button;
 	@FindBy(css = "div.row div.product-layout:last-of-type button:nth-of-type(2) i")
 	private WebElement wishList2Button;
@@ -29,8 +29,8 @@ public class MonitorsPage extends BaseTests {
 	private WebElement message;
 
 	public void clickaddCartButton2() {
-		Utils.sleep(10);
-		Utils.waitForElementToBeClickable(addCart2Button);
+		
+		
 		addCart2Button.click();
 	}
 
