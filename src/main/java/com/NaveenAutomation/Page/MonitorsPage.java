@@ -50,7 +50,7 @@ public class MonitorsPage extends BaseTests {
 		cartButton.click();
 	}
 	public CheckOutPage clickCheckOut() {
-		Utils.sleep(10);
+		Utils.sleep(15);
 		Utils.waitForElementToBeClickable(checkOut);
 		checkOut.click();
 		return new CheckOutPage();
