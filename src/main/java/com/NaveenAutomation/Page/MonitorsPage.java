@@ -29,6 +29,7 @@ public class MonitorsPage extends BaseTests {
 	private WebElement message;
 
 	public void clickaddCartButton2() {
+		Utils.sleep(10);
 		Utils.waitForElementToBeClickable(addCart2Button);
 		addCart2Button.click();
 	}
@@ -49,6 +50,7 @@ public class MonitorsPage extends BaseTests {
 		cartButton.click();
 	}
 	public CheckOutPage clickCheckOut() {
+		Utils.sleep(10);
 		Utils.waitForElementToBeClickable(checkOut);
 		checkOut.click();
 		return new CheckOutPage();

@@ -42,7 +42,7 @@ public class OrderHistoryPageTest extends BaseTests {
 		account = login.isLoginSuccessful(email, password);
 		history = account.clickOrderTab();
 		String text = history.findText(columnData2, Table_name.DATEADDED);
-		Assert.assertEquals(text, "25/08/2022", "The dates match");
+		Assert.assertEquals(text, "18/09/2022", "The dates match");
 	}
 
 	
