@@ -23,8 +23,9 @@ public class MonitorsPage extends BaseTests {
 	private WebElement compare2;
 	@FindBy(css="#cart-total")
 	private WebElement cartButton;
-	@FindBy(css="ul.dropdown-menu li:last-of-type p a:last-of-type strong")
+	@FindBy(xpath ="//strong[contains(text(),' Checkout')]")
 	private WebElement checkOut;
+	//ul.dropdown-menu li:last-of-type p a:last-of-type strong
 	@FindBy(css="#product-category div.alert")
 	private WebElement message;
 
