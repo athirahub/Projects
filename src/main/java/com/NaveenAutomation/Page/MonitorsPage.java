@@ -30,7 +30,7 @@ public class MonitorsPage extends BaseTests {
 	private WebElement message;
 
 	public void clickaddCartButton2() {
-		Utils.sleep(10);
+		Utils.sleep(15);
 		//*[@id="content"]/div[3]/div[2]/div/div[2]/div[2]/button[1]
 		addCart2Button.click();
 	}
