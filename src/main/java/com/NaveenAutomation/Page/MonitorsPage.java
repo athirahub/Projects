@@ -15,7 +15,7 @@ public class MonitorsPage extends BaseTests {
 
 	@FindBy(css = "#content h2")
 	private WebElement header;
-	@FindBy(css = "div.row div.product-layout:last-of-type div.button-group span")
+	@FindBy(css = "div.row div.product-layout:last-of-type span.hidden-xs")
 	private WebElement addCart2Button;
 	@FindBy(css = "div.row div.product-layout:last-of-type button:nth-of-type(2) i")
 	private WebElement wishList2Button;
